@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #last-login, #sessionTimer  {
+        margin: 0 auto; 
+        width: 500px;      
+    }
+    #taskForm {
+        margin: 0 auto;
+        background-color: blue;
+        width: 300px;
+    }
+
+    #taskList {
+        margin: 0 auto;
+        width: 300px;
+        border-bottom: 1px solid;        
+    }
+
+    h2 {
+        text-align: center;
+    }
+    input, textarea, button {
+        margin: 7px 20px;
+        padding: 5px;
+    }
+
+</style>
+<body>
+    <div id="last-login"></div>
+    <div id="sessionTimer"></div>
+    <h2>Нове Завдання:</h2>
+    <form id="taskForm">
+        <input type="text" id="title" placeholder="Назва завдання" required><br>
+        <input type="date" id="date" required><br>
+        <textarea id="describe" placeholder="Опис завдання" required></textarea><br>
+        <button type="submit">Додати завдання</button><br>
+    </form>
+    <h2>Минулі Завдання:</h2>
+    <div id="taskList">
+    </div>
+    <script src="./2.js"></script>
+</body>
+</html>
