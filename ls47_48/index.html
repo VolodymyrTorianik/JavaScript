@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<style>
+    body {
+        padding: 50px;
+    }
+    h4 {
+        margin: 20px 0px;
+    }
+    .kubiki {
+        display: flex;
+        gap: 20px;
+    }
+    .kub1 {
+        display: flex;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        justify-content: center;
+        align-items: center;
+        text-align: center; 
+        color:white;
+    }
+
+    .kub2 {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+    }
+
+    #copypast {
+        background-color: aqua;
+        padding: 20px 30px;
+    }
+
+    .kub3 {
+        width: 100px;
+        height: 100px;
+        background-color: black;
+    }    
+
+    .kub4 {
+        width: 150px;
+        height: 150px;
+        background-color: black;
+    }    
+
+    .kub5 {
+        width: 100px;
+        height: 100px;
+        background-color: rgb(68, 139, 40);
+    }    
+
+
+    .kub6 {
+        width: 50px;
+        height: 50px;
+        background-color: rgb(151, 22, 22);
+    }   
+    
+    
+    .kub7 {
+        width: 150px;
+        height: 150px;
+        background-color:chartreuse;
+    }    
+
+    .kub8 {
+        width: 100px;
+        height: 100px;
+        background-color:chocolate; 
+    }    
+
+
+    .kub9 {
+        width: 50px;
+        height: 50px;
+        background-color:darkviolet;
+    }    
+
+    .FrstForm {
+        width: 600px;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .formstyle {
+        background-color: aquamarine;
+        padding: 20px 20px;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .formstyle button {
+        margin-top: 15px;
+    }
+
+    #basic-addon3 {
+        background-color: rgb(70, 55, 83);
+        color: #fff;
+    }    
+</style>
+<body>
+    <h4>1. Створити 2 кубіка, при кліку на перший: другий повинен змінювати свій колір на рандомний.</h4>
+    <div class="kubiki">
+        <div class="kub1">Click</div>
+        <div class="kub2"></div>
+    </div>
+    <hr>
+    <h4>2. Створити текстовий блок, при спробі його скопіювати покажіть користувачу вікно "Текст неможливо скопіювати!!</h4>
+    <div id="copypast">
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque quaerat quidem nesciunt consequuntur molestias nihil est numquam omnis quae magnam blanditiis commodi debitis corporis aliquid sunt, sint, deleniti dolores. Ab.
+    </div>
+    <hr>
+    <h4>3. Створити кубік 100х100 який міняє свій колір в залежності від того на яких координатах ви знаходитесь (r - X координата, g - Y координата, b - середнє арифметичне X+Y/2)   </h4>
+    <div class="kub3"></div>
+    <hr>
+    <h4>4. Створіть 3 кубіка один в одному які будуть при кліку виводити щось про себе в консоль</h4>
+    <div class="kub4">
+        <div class="kub5">
+            <div class="kub6"></div>
+        </div>
+    </div>
+    <hr>
+    <h4>5. Створіть ще 3 кубіка які є один в одному, змініть напрямок виконання івенту, зупиніть виконання івентів на другому івенті (Див. лекцію).</h4>
+    <div class="kub7">
+        <div class="kub8">
+            <div class="kub9"></div>
+        </div>
+    </div>
+    <hr>
+    <h4>6. Використайте будь яку форму з домашної про форми (в модулі HTML\CSS), та отримайте дані з неї у вигляді об\'єкту, виведіть об\'єкт форми в консоль. Відмініть поведінку за замовчуванням для кнопки submit у формі (Див. лекцію).</h4>
+    <div class="FrstForm">
+        <form class="formstyle">
+            <div class="mb-3">
+                <label for="exampleInputEmail" class="form-label">Уведіть свій E-мейл</label>
+                <input type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">Ми ніколи не будемо розкривати вашу адресу стороннім особам</div>
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputPassword" class="form-label">Уведіть пароль</label>
+                <input type="password" class="form-control" id="exampleInputPassword">
+              </div>
+              <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck">
+                <label class="form-check-label" for="exampleCheck">Я згоден з умовами</label>
+              </div>
+              <label for="selectsex" class="form-label">Оберіть стать</label>
+              <select class="form-select" id="selectsex">
+                <option selected>Чоловіча</option>
+                <option value="1">Жіноча</option>
+                <option value="2">Не визначився</option>
+              </select>
+              <button type="submit" class="btn btn-primary">Зареєструватися</button>
+        </form>
+    </div>
+    <script src="./script.js"></script>
+</body>
+</html>
