@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Animation with JavaScript</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f0f0f0;
+    }
+
+    .box {
+      width: 100px;
+      height: 100px;
+      background-color: #3498db;
+      border-radius: 10px;
+    }
+
+    @keyframes moveRight {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(300px);
+      }
+    }
+
+    .animate {
+      animation: moveRight 2s ease-in-out forwards;
+    }
+
+    button {
+      position: absolute;
+      bottom: 20px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2ecc71;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #27ae60;
+    }
+  </style>
+</head>
+<body>
+  <div class="box" id="box"></div>
+  <button id="animateBtn">Start Animation</button>
+
+  <script>
+    document.getElementById('animateBtn').addEventListener('click', async () => {
+      const box = document.getElementById('box');
+      box.classList.remove('animate');
+      await new Promise(resolve => setTimeout(resolve, 50));
+      box.classList.add('animate');
+    });
+  </script>
+</body>
+</html>
