@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Головна</a>
+        <a href="users.html">Users</a>
+        <a href="posts.html">Posts</a>
+        <a href="comments.html">Comments</a>
+    </nav>
+    <h1>Posts</h1>
+    <div class="container">
+        <input type="number" id="postId" placeholder="Введіть ID поста" />
+        <button onclick="fetchPost()">Send</button>
+
+        <div class="post" id="post"></div>
+    </div>
+
+    <script>
+        function fetchPost() {
+            const postId = document.getElementById('postId').value; 
+            const postContainer = document.getElementById('post'); 
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', `https://jsonplaceholder.typicode.com/posts/${postId}`, true);
+            xhr.onload = function() {
+                    if (xhr.status === 200) {
+                    const post = JSON.parse(xhr.responseText);
+                    postContainer.innerHTML = `<h2>${post.title}</h2><p>${post.body}</p>`;
+                    }
+            };
+            xhr.send();
+        }
+    </script>
+</body>
+</html>

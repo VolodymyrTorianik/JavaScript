@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Users</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Головна</a>
+        <a href="users.html">Users</a>
+        <a href="posts.html">Posts</a>
+        <a href="comments.html">Comments</a>
+    </nav>
+    <h1>Users</h1>
+    <input type="number" id="userId" placeholder="Enter user ID">
+    <button id="idUser">Send</button>
+    <div id="userInfo"></div>
+    <script>
+        document.getElementById("idUser").addEventListener("click", () => {
+    const userId = document.getElementById("userId").value;
+    if (!userId) return;
+        fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
+            .then(response => response.json())
+            .then(user => {
+            document.getElementById("userInfo").innerHTML = `<h2>${user.name}</h2> <p>Email: ${user.email}</p> <p>Phone: ${user.phone}</p> <p>Website: ${user.website}</p>`;
+        })
+            .catch(error => console.error(error));
+});
+    </script>
+</body>
+</html>

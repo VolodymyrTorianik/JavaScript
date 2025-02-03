@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <nav>
+        <a href="index.html">Головна</a>
+        <a href="users.html">Users</a>
+        <a href="posts.html">Posts</a>
+        <a href="comments.html">Comments</a>
+    </nav>
+    <h1>Comments</h1>
+    <input type="number" id="commentId" placeholder="Enter comment ID">
+    <button id="idComment">Send</button>
+    <div id="commentInfo"></div>
+    <script>
+        document.getElementById("idComment").addEventListener("click", () => {
+        const commentId = document.getElementById("commentId").value;
+        if (!commentId) return;
+            fetch(`https://jsonplaceholder.typicode.com/comments/${commentId}`)
+            .then(response => response.json())
+            .then(comment => {
+            document.getElementById("commentInfo").innerHTML = ` <h2>${comment.name}</h2><p>${comment.body}</p> <p><strong>Email:</strong> ${comment.email}</p>`;
+        })
+            .catch(error => console.error(error));
+});
+    </script>
+</body>
+</html>
